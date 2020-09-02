@@ -11,13 +11,16 @@ app.use(express.static("public"));
 
 //The following HTML routes should be created:
 app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "/public/index.html"));
   });
 app.get("/notes", function(req, res) {
-    res.sendFile(path.join(__dirname, "notes.html"));
+    res.sendFile(path.join(__dirname, "/public/notes.html"));
   });
 
 //The following API routes should be created:
 app.get("/api/notes", function(req, res) {
     return res.json(db);
+});
+app.post("/api/notes", function(req, res) {
+
 });
